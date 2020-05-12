@@ -37,6 +37,16 @@ nfd-master   3         3         3       3            3           node-role.kube
 nfd-worker   6         6         6       6            6           node-role.kubernetes.io/worker=   3m7s
 ```
 
+Verify that the GPU-enabled nodes have been labeled properly:
+
+```
+$ oc get nodes --selector feature.node.kubernetes.io/pci-10de.present=true
+NAME                                         STATUS   ROLES    AGE   VERSION
+ip-10-0-134-147.us-west-2.compute.internal   Ready    worker   75m   v1.17.1
+ip-10-0-150-189.us-west-2.compute.internal   Ready    worker   75m   v1.17.1
+ip-10-0-167-244.us-west-2.compute.internal   Ready    worker   75m   v1.17.1
+```
+
 ## References
 
 * [Creating a GPU-enabled node with OpenShift 4.2 in Amazon EC2](https://www.openshift.com/blog/creating-a-gpu-enabled-node-with-openshift-4-2-in-amazon-ec2)
