@@ -47,8 +47,23 @@ ip-10-0-150-189.us-west-2.compute.internal   Ready    worker   75m   v1.17.1
 ip-10-0-167-244.us-west-2.compute.internal   Ready    worker   75m   v1.17.1
 ```
 
+## Installing RHEL Entitlements on OpenShift Nodes
+
+This section is based on the instructions found at [How to use entitled image builds on Red Hat OpenShift Container Platform 4.x cluster ?](https://access.redhat.com/solutions/4908771) Follow the instructions in the *Downloading certificates* section of that article in order to obtain a zip archive with certificates.
+
+Insert the base-64 encoded content of the *xxxx_certificates.zip/consumer_export.zip/export/entitlement_certificates/xxxxx.pem* into the manifest *./rhel-entitlements/base/50-entitlement-key-pem-machineconfig.yaml* and *./rhel-entitlements/base/50-entitlement-pem-machineconfig.yaml*.
+
+Apply thte machineconfigs to the cluster:
+
+```
+$ oc apply --kustomize rhel-entitlements/base
+```
+
+
+
 ## References
 
 * [Creating a GPU-enabled node with OpenShift 4.2 in Amazon EC2](https://www.openshift.com/blog/creating-a-gpu-enabled-node-with-openshift-4-2-in-amazon-ec2)
 * [Simplifying deployments of accelerated AI workloads on Red Hat OpenShift with NVIDIA GPU Operator](https://www.openshift.com/blog/simplifying-deployments-of-accelerated-ai-workloads-on-red-hat-openshift-with-nvidia-gpu-operator)
 * [How to install the NVIDIA GPU Operator with OpenShift](https://access.redhat.com/solutions/4908611)
+* [How to use entitled image builds on Red Hat OpenShift Container Platform 4.x cluster ?](https://access.redhat.com/solutions/4908771)
