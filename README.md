@@ -53,13 +53,15 @@ This section is based on the instructions found at [How to use entitled image bu
 
 Insert the base-64 encoded content of the *xxxx_certificates.zip/consumer_export.zip/export/entitlement_certificates/xxxxx.pem* into the manifest *./rhel-entitlements/base/50-entitlement-key-pem-machineconfig.yaml* and *./rhel-entitlements/base/50-entitlement-pem-machineconfig.yaml*.
 
+> :exclamation: Applying the machineconfigs to the cluster will cause all worker nodes to restart.
+
 Apply thte machineconfigs to the cluster:
 
 ```
 $ oc apply --kustomize rhel-entitlements/base
 ```
 
-Allow some time for the cluster nodes to restart. Verify the RHEL entitlements configuration:
+Allow some time for the worker nodes to restart. Verify the RHEL entitlements configuration:
 
 ```
 $ oc create --filename https://raw.githubusercontent.com/openshift-psap/blog-artifacts/master/how-to-use-entitled-builds-with-ubi/0004-cluster-wide-entitled-pod.yaml
@@ -97,3 +99,5 @@ $ oc delete pod cluster-entitled-build-pod
 * [Simplifying deployments of accelerated AI workloads on Red Hat OpenShift with NVIDIA GPU Operator](https://www.openshift.com/blog/simplifying-deployments-of-accelerated-ai-workloads-on-red-hat-openshift-with-nvidia-gpu-operator)
 * [How to install the NVIDIA GPU Operator with OpenShift](https://access.redhat.com/solutions/4908611)
 * [How to use entitled image builds on Red Hat OpenShift Container Platform 4.x cluster ?](https://access.redhat.com/solutions/4908771)
+* [NVIDIA GPU Operator](https://github.com/NVIDIA/gpu-operator)
+
