@@ -93,6 +93,26 @@ Remove the test pod:
 $ oc delete pod cluster-entitled-build-pod
 ```
 
+## Deploying NVIDIA GPU Operator
+
+Add the NVIDIA Helm repository:
+
+```
+$ helm repo add nvidia https://nvidia.github.io/gpu-operator
+```
+
+Update the NVIDIA Helm repository:
+
+```
+$ helm repo update
+```
+
+Install the NVIDIA GPU operator:
+
+```
+$  helm install --devel nvidia/gpu-operator --set platform.openshift=true,operator.defaultRuntime=crio --wait --generate-name
+```
+
 ## References
 
 * [Creating a GPU-enabled node with OpenShift 4.2 in Amazon EC2](https://www.openshift.com/blog/creating-a-gpu-enabled-node-with-openshift-4-2-in-amazon-ec2)
