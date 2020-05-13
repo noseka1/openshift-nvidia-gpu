@@ -59,7 +59,11 @@ Apply thte machineconfigs to the cluster:
 $ oc apply --kustomize rhel-entitlements/base
 ```
 
+Verify the RHEL entitlements configuration:
 
+```
+$ oc create --filename https://raw.githubusercontent.com/openshift-psap/blog-artifacts/master/how-to-use-entitled-builds-with-ubi/0004-cluster-wide-entitled-pod.yaml
+```
 
 ## References
 
