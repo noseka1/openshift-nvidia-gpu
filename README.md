@@ -100,4 +100,5 @@ $ oc delete pod cluster-entitled-build-pod
 * [How to install the NVIDIA GPU Operator with OpenShift](https://access.redhat.com/solutions/4908611)
 * [How to use entitled image builds on Red Hat OpenShift Container Platform 4.x cluster ?](https://access.redhat.com/solutions/4908771)
 * [NVIDIA GPU Operator](https://github.com/NVIDIA/gpu-operator)
+* [OpenShift on NVIDIA GPU Accelerated Clusters](https://docs.nvidia.com/datacenter/kubernetes/openshift-on-gpu-install-guide/index.html)
 
