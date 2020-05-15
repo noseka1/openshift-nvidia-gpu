@@ -57,6 +57,14 @@ Deploy NVIDIA GPU operator using the command:
 $ oc apply --kustomize nvidia-gpu-operator/base
 ```
 
+Verify that the NVIDIA GPU operator was deployed successfully:
+
+```
+$ oc get csv --namespace gpu-operator
+NAME                               DISPLAY                  VERSION    REPLACES   PHASE
+gpu-operator-certified.v1.1.5-r6   NVIDIA GPU Operator      1.1.5-r6              Succeeded
+```
+
 Create a NVIDIA GPU instance:
 
 ```
