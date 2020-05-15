@@ -92,7 +92,9 @@ Note that the nvidia-driver-validation pod may show “CreateContainerError” f
 Verify that the NVIDIA GPU deployment completed successfully. The state of the *nvidia-gpu* clusterpolicy should change to *Ready*:
 
 ```
-$ oc get clusterpolicy nvidia-gpu --namespace gpu-operator-resources --output jsonpath='{.status.state}'
+$ oc get clusterpolicy nvidia-gpu \
+    --namespace gpu-operator-resources \
+    --output jsonpath='{.status.state}'
 Ready
 ```
 
