@@ -33,7 +33,7 @@ $ oc apply --kustomize nfd-instance/base
 Verify that the NFD pods are running on each of your cluster node:
 
 ```
-$ c get ds --namespace openshift-nfd
+$ oc get ds --namespace openshift-nfd
 NAME         DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR                     AGE
 nfd-master   3         3         3       3            3           node-role.kubernetes.io/master=   3m7s
 nfd-worker   6         6         6       6            6           node-role.kubernetes.io/worker=   3m7s
