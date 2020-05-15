@@ -60,7 +60,7 @@ $ oc apply --kustomize nvidia-gpu-operator/base
 Verify that the NVIDIA GPU operator was deployed successfully:
 
 ```
-$ oc get csv --namespace gpu-operator
+$ oc get csv --namespace gpu-operator-resources
 NAME                               DISPLAY                  VERSION    REPLACES   PHASE
 gpu-operator-certified.v1.1.5-r6   NVIDIA GPU Operator      1.1.5-r6              Succeeded
 nfd.4.4.0-202004261927             Node Feature Discovery   4.4.0                 Succeeded
