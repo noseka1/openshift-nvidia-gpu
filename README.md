@@ -1,5 +1,7 @@
 # Deploying NVIDIA GPU Operator to OpenShift
 
+This kustomization uses [NVIDIA GPU Operator](https://github.com/NVIDIA/gpu-operator). The installation process is documented in [OpenShift on NVIDIA GPU Accelerated Clusters](https://docs.nvidia.com/datacenter/kubernetes/openshift-on-gpu-install-guide/index.html).
+
 ## Prerequisites
 
 OpenShift cluster with GPU-enabled nodes:
@@ -115,10 +117,9 @@ $  helm install --devel nvidia/gpu-operator --set platform.openshift=true,operat
 
 ## References
 
+* [OpenShift on NVIDIA GPU Accelerated Clusters](https://docs.nvidia.com/datacenter/kubernetes/openshift-on-gpu-install-guide/index.html)
+* [NVIDIA GPU Operator](https://github.com/NVIDIA/gpu-operator)
 * [Creating a GPU-enabled node with OpenShift 4.2 in Amazon EC2](https://www.openshift.com/blog/creating-a-gpu-enabled-node-with-openshift-4-2-in-amazon-ec2)
 * [Simplifying deployments of accelerated AI workloads on Red Hat OpenShift with NVIDIA GPU Operator](https://www.openshift.com/blog/simplifying-deployments-of-accelerated-ai-workloads-on-red-hat-openshift-with-nvidia-gpu-operator)
 * [How to install the NVIDIA GPU Operator with OpenShift](https://access.redhat.com/solutions/4908611)
 * [How to use entitled image builds on Red Hat OpenShift Container Platform 4.x cluster ?](https://access.redhat.com/solutions/4908771)
-* [NVIDIA GPU Operator](https://github.com/NVIDIA/gpu-operator)
-* [OpenShift on NVIDIA GPU Accelerated Clusters](https://docs.nvidia.com/datacenter/kubernetes/openshift-on-gpu-install-guide/index.html)
-
