@@ -2,7 +2,7 @@
 
 This kustomization uses [NVIDIA GPU Operator](https://github.com/NVIDIA/gpu-operator). The installation process is documented in [OpenShift on NVIDIA GPU Accelerated Clusters](https://docs.nvidia.com/datacenter/kubernetes/openshift-on-gpu-install-guide/index.html).
 
-This kustomization was tested on OpenShift 4.4.3.
+This kustomization was tested on OCP 4.4.3.
 
 ## Prerequisites
 
