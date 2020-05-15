@@ -72,6 +72,30 @@ Create a NVIDIA GPU instance:
 $ oc apply --kustomize nvidia-gpu-instance/base
 ```
 
+Check the status of the NVIDIA GPU pods:
+
+```
+$ oc get pod --namespace gpu-operator-resources
+NAME                                       READY   STATUS                 RESTARTS   AGE
+gpu-operator-757877f9b-m86kx               1/1     Running                0          3m4s
+nvidia-container-toolkit-daemonset-b2wxs   1/1     Running                0          97s
+nvidia-container-toolkit-daemonset-bdjz4   1/1     Running                0          97s
+nvidia-container-toolkit-daemonset-s748z   1/1     Running                0          97s
+nvidia-driver-daemonset-pzpjz              1/1     Running                1          92s
+nvidia-driver-daemonset-w7wh8              1/1     Running                1          92s
+nvidia-driver-daemonset-xfkzk              1/1     Running                0          92s
+nvidia-driver-validation                   0/1     CreateContainerError   0          87s
+```
+
+Note that the nvidia-driver-validation pod may show “CreateContainerError” for a period of time while the operator is starting up the components.
+
+Verify that the NVIDIA GPU deployment completed successfully. The state of the *nvidia-gpu* clusterpolicy should change to *Ready*:
+
+```
+$ oc get clusterpolicy nvidia-gpu --namespace gpu-operator-resources --output jsonpath='{.status.state}'
+Ready
+```
+
 ## References
 
 * [OpenShift on NVIDIA GPU Accelerated Clusters](https://docs.nvidia.com/datacenter/kubernetes/openshift-on-gpu-install-guide/index.html)
