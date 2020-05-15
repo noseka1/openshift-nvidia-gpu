@@ -89,7 +89,7 @@ nvidia-driver-daemonset-xfkzk              1/1     Running                0     
 nvidia-driver-validation                   0/1     CreateContainerError   0          87s
 ```
 
-Note that the *nvidia-driver-validation* pod may show “CreateContainerError” for a period of time while the operator is starting up the components.
+Note that the *nvidia-driver-validation* pod may show “CreateContainerError” for a period of time while the operator is starting up the components. Eventually, the status will change to *Completed*.
 
 Verify that the NVIDIA GPU deployment completed successfully. The state of the *nvidia-gpu* clusterpolicy should change to *Ready*:
 
