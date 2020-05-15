@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+configurations:
+- kustomizeconfig/operatorgroup.yaml
+
+namespace: gpu-operator-resources
+
+resources:
+- gpu-operator-resources-namespace.yaml
+- gpu-operator-subscription.yaml
+- gpu-operator-operatorgroup.yaml
+
+vars:
+- fieldref:
+    fieldPath: metadata.namespace
+  name: NAMESPACE
+  objref:
+    apiVersion: operators.coreos.com/v1alpha1
+    kind: Subscription
+    name: gpu-operator
