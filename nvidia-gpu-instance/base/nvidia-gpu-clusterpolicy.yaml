@@ -4,5 +4,3 @@ metadata:
   name: nvidia-gpu
 spec:
   size: 1
-status:
-  state: N/A
