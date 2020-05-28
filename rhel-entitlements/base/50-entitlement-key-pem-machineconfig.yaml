@@ -1,0 +1,17 @@
+apiVersion: machineconfiguration.openshift.io/v1
+kind: MachineConfig
+metadata:
+  labels:
+    machineconfiguration.openshift.io/role: worker
+  name: 50-entitlement-key-pem
+spec:
+  config:
+    ignition:
+      version: 2.2.0
+    storage:
+      files:
+      - contents:
+          source: data:text/plain;charset=utf-8;base64,BASE64_ENCODED_KEY_PEM_FILE_HERE
+        filesystem: root
+        mode: 0644
+        path: /etc/pki/entitlement/entitlement-key.pem

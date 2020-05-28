@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- 50-entitlement-key-pem-machineconfig.yaml
+- 50-entitlement-pem-machineconfig.yaml
+- 50-rhsm-conf-machineconfig.yaml
