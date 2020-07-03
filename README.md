@@ -59,7 +59,7 @@ Insert the base-64 encoded content of the xxxx_certificates.zip/consumer_export.
 
 > :exclamation: Applying the machineconfigs to the cluster will cause all worker nodes to restart.
 
-Apply thte machineconfigs to the cluster:
+Apply the machineconfigs to the cluster:
 
 ```
 $ oc apply --kustomize rhel-entitlements/base
